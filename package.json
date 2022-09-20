@@ -1,19 +1,15 @@
 {
-  "name": "hola_mundo",
+  "name": "curso-javascript",
   "version": "1.0.0",
-  "description": "Este es mi primer proyecto de javascript con node en opebootcamp",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js" ,
-    "saludar": "node hola_mundo.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [
-    "holamundo",
-    "first",
-    "project",
-    "hola"
-  ],
-  "author": "Facevedo",
-  "license": "ISC"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^3.8.2"
+  }
 }

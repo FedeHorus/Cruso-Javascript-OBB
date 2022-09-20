@@ -1,7 +1,30 @@
-// este es el mensaje de bienvenida
+const winston = require('winston');
 
-console.log("esta es la entrada")
+const logger = winston.createLogger({
+  level: 'silly',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
+  transports: [
+    //
+    // - Write all logs with importance level of `error` or less to `error.log`
+    // - Write all logs with importance level of `info` or less to `combined.log`
+    //
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' }),
+  ],
+});
 
 
-//este es el mensaje de chau
-console.log("Chaucito")
+
+function mostrarError(){
+ throw new Error('Este es un error personalizado');
+
+
+}
+
+try {
+     mostrarError();
+}
+ catch(e){
+    logger.log('error', e);
+ }
